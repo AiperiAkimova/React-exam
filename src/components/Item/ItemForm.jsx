@@ -10,7 +10,6 @@ const ItemForm = ({onAddItem}) =>{
     }
     const submitHandleler = (e) =>{
         e.preventDefault()
-        
         onAddItem(state)
         setState("")
     }

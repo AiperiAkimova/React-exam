@@ -9,7 +9,15 @@ function App() {
  const [text, setText] = useState([])
  
 
- const addItemHandler =(itemText)=>{
+ const addItemHandler = async(itemText)=>{
+  await fetch ("https://add-text-38628-default-rtdb.europe-west1.firebasedatabase.app/items.json", {
+    method: "POST",
+    body: JSON.stringify(itemText),
+    headers:{
+      "Content-type": "application/json",
+    }
+
+  })
   setText((prevState) =>{
     return(
       [...prevState, {
@@ -20,16 +28,16 @@ function App() {
   })
  }
 
-//  const addItems = async(items) =>{
-//   await fetch ("https://add-text-38628-default-rtdb.europe-west1.firebasedatabase.app/items.json", {
-//     method: "POST",
-//     body: JSON.stringify(items),
-//     headers:{
-//       "Content-type": "application/json",
-//     }
+ const addItems = async(items) =>{
+  await fetch ("https://add-text-38628-default-rtdb.europe-west1.firebasedatabase.app/items.json", {
+    method: "POST",
+    body: JSON.stringify(items),
+    headers:{
+      "Content-type": "application/json",
+    }
 
-//   })
-//  }
+  })
+ }
  
   return (
     <>
