@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Card from "../UI/Card";
 import ErrorModal from "../UI/RenameModal";
 import classes from './ItemList.module.css'
 
